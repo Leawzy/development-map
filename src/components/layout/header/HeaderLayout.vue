@@ -1,5 +1,27 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const menuOpen = ref(false);
+
+const windowWidth = ref(window.innerWidth);
+
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
+};
+
+const handleResize = () => {
+  windowWidth.value = window.innerWidth;
+  menuOpen.value = false;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <template>
@@ -7,18 +29,35 @@ import { RouterLink } from 'vue-router';
     <div class="header-wrapper">
       <div class="header-list">
         <div class="header-item">
-          <img src="" alt="Логотип" />
+          <a href="/"><img src="" alt="Логотип" /></a>
           <nav>
             <RouterLink to="/about">About</RouterLink>
             <RouterLink to="/about">About</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
+            <RouterLink to="/profile">Профиль</RouterLink>
             <RouterLink to="/about">About</RouterLink>
           </nav>
         </div>
         <div class="header-item">
-          <button>И</button>
-          Илья
+          <div id="user-info">
+            <button>И</button>
+            Илья
+          </div>
+          <div
+            v-if="windowWidth <= 768"
+            @click="toggleMenu"
+            class="burger-menu"
+          >
+            ☰
+          </div>
         </div>
+      </div>
+      <div class="hamburger-menu" v-if="menuOpen">
+        <nav class="hamburger-menu" v-if="menuOpen">
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/profile">Профиль</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav>
       </div>
     </div>
   </header>
@@ -63,6 +102,29 @@ nav {
   gap: 20px;
 }
 
+.hamburger-menu {
+  display: block;
+  position: fixed;
+  top: 62px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu nav a {
+  border-bottom: 1px solid rgb(229 231 235);
+}
+
 button {
   height: 35px;
   background: limegreen;
@@ -82,6 +144,12 @@ a {
 @media screen and (max-width: 1300px) {
   .header-list {
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
   }
 }
 </style>
