@@ -81,11 +81,9 @@ useHead({
 }
 
 .main-wrapper {
-  width: 100vw;
-  margin-left: calc((100% - 100vw) / 2);
-  margin-right: calc((100% - 100vw) / 2);
+  margin-left: calc((100% - 99vw) / 2);
+  margin-right: calc((100% - 99vw) / 2);
   background-color: rgb(234 88 12);
-  position: relative;
 }
 
 .main-block {
@@ -214,6 +212,46 @@ useHead({
   .goals-block {
     flex-direction: column;
     gap: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-block p {
+    width: 100%;
+  }
+
+  .feature-block h2 {
+    text-align: center;
+  }
+
+  .feature-block p {
+    text-align: center;
+    width: 90vw;
+  }
+
+  .goals-item p {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main-block h1 {
+    font-size: 2.25rem;
+  }
+
+  .main-block p {
+    font-size: 18px;
+  }
+
+  .main-button {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .goals-item {
+    width: 300px;
   }
 }
 </style>
