@@ -8,8 +8,8 @@
           © 2024 Карта развития. Все права защищены.
         </div>
         <div class="footer-items">
-          <a href="http://">Помощь</a>
-          <a href="http://">Связаться с нами</a>
+          <a href="#">Помощь</a>
+          <a href="#">Связаться с нами</a>
         </div>
       </div>
     </div>
@@ -18,6 +18,7 @@
 
 <style scoped>
 footer {
+  margin-top: auto;
   background-color: white;
   border-top: 1px solid rgb(229 231 235);
 }
@@ -43,5 +44,20 @@ a {
   gap: 20px;
   color: rgb(75 85 99);
   font-size: 0.875rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .footer-wrapper {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-block {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
 </style>
