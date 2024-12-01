@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+import GoalCreateModal from '@/components/modalWindows/GoalCreateModal.vue';
+
+const goalModalRef = ref();
+
+const openModal = () => {
+  goalModalRef.value?.openModal();
+};
+</script>
 
 <template>
   <section class="current-goals-block">
@@ -8,7 +17,7 @@
       </div>
       <div class="current-goals-btn">
         <button class="btn-filter">Ф</button>
-        <button class="btn-add-goal">Добавить цель</button>
+        <button class="btn-add-goal" @click="openModal()">Добавить цель</button>
       </div>
     </div>
     <article class="current-goal-item">
@@ -58,6 +67,7 @@
       </div>
     </article>
   </section>
+  <GoalCreateModal ref="goalModalRef" />
 </template>
 
 <style scoped>
@@ -113,12 +123,16 @@
   transition: transform 0.3s ease;
   width: 62px;
   border: none;
-  background-color: rgb(229 231 235);
+  background-color: rgb(243 244 246);
   color: rgb(55 65 81);
 }
 
 .btn-add-goal:hover {
   transform: scale(1.01);
+}
+
+.btn-filter:hover {
+  background-color: rgb(229 231 235);
 }
 
 .current-goal-item {
