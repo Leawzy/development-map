@@ -36,6 +36,7 @@ useHead({
           </div>
           <div class="profile-btn">
             <a href="#" class="profile-btn-edit">Редактировать профиль</a>
+            <a href="#" class="btn-download">Скачать план развития</a>
           </div>
         </article>
       </section>
@@ -44,9 +45,6 @@ useHead({
         <CurrentGoalsLayout />
         <AchievementsLayout />
       </div>
-      <section class="profile-btn-block">
-        <a href="#" class="btn-download">Скачать план развития</a>
-      </section>
     </div>
   </main>
 </template>
@@ -94,6 +92,12 @@ useHead({
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+}
+
+.profile-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .profile-name {
@@ -145,7 +149,7 @@ useHead({
   height: 46px;
   border-radius: 12px;
   transition: transform 0.3s ease;
-  width: 368px;
+  width: 225px;
   background-color: rgb(249 115 22);
   color: white;
 }
@@ -174,7 +178,8 @@ useHead({
 @media screen and (max-width: 768px) {
   .profile-card,
   .profile-info,
-  .profile-info-items {
+  .profile-info-items,
+  .profile-btn {
     flex-direction: column;
     gap: 20px;
     align-items: center;
