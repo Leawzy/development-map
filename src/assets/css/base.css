@@ -28,3 +28,11 @@ div#app {
 .bg-amber {
     background: linear-gradient(to right, #f59e0b, #d97706);
 }
+
+.text-gray {
+    color: rgb(75 85 99);
+}
+
+.font-500 {
+    font-weight: 500;
+}

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 import StatisticsLayout from '@/components/statisticsBlock/statisticsLayout.vue';
+import CurrentGoalsLayout from '@/components/goalsBlock/currentGoalsLayout.vue';
+import AchievementsLayout from '@/components/profile/achievementsLayout.vue';
 
 useHead({
   title: 'Профиль | Карта развития',
@@ -38,6 +40,10 @@ useHead({
         </article>
       </section>
       <StatisticsLayout />
+      <div class="flex-wrap-blocks">
+        <CurrentGoalsLayout />
+        <AchievementsLayout />
+      </div>
       <section class="profile-btn-block">
         <a href="#" class="btn-download">Скачать план развития</a>
       </section>
@@ -125,6 +131,13 @@ useHead({
   color: white;
 }
 
+.flex-wrap-blocks {
+  display: grid;
+  grid-template-columns: 768px auto;
+  gap: 20px;
+  align-items: start;
+}
+
 .btn-download {
   display: flex;
   justify-content: center;
@@ -151,6 +164,10 @@ useHead({
   .profile-btn-block {
     display: flex;
     justify-content: center;
+  }
+
+  .flex-wrap-blocks {
+    grid-template-columns: 1fr;
   }
 }
 
