@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
+import StatisticsLayout from '@/components/statisticsBlock/statisticsLayout.vue';
 
 useHead({
   title: 'Профиль | Карта развития',
@@ -36,44 +37,7 @@ useHead({
           </div>
         </article>
       </section>
-      <section class="statistics-block">
-        <article class="statistics-item">
-          <div class="statistics-logo">
-            <img src="" alt="Статистика" />
-          </div>
-          <div class="statistics-info">
-            <span class="statistics-name">Всего целей</span>
-            <span class="statistics-count">0</span>
-          </div>
-        </article>
-        <article class="statistics-item">
-          <div class="statistics-logo">
-            <img src="" alt="Статистика" />
-          </div>
-          <div class="statistics-info">
-            <span class="statistics-name">Выполнено</span>
-            <span class="statistics-count">0</span>
-          </div>
-        </article>
-        <article class="statistics-item">
-          <div class="statistics-logo">
-            <img src="" alt="Статистика" />
-          </div>
-          <div class="statistics-info">
-            <span class="statistics-name">В процессе</span>
-            <span class="statistics-count">0</span>
-          </div>
-        </article>
-        <article class="statistics-item">
-          <div class="statistics-logo">
-            <img src="" alt="Статистика" />
-          </div>
-          <div class="statistics-info">
-            <span class="statistics-name">Средний прогресс</span>
-            <span class="statistics-count">0</span>
-          </div>
-        </article>
-      </section>
+      <StatisticsLayout />
       <section class="profile-btn-block">
         <a href="#" class="btn-download">Скачать план развития</a>
       </section>
@@ -161,47 +125,6 @@ useHead({
   color: white;
 }
 
-.statistics-block {
-  display: flex;
-  justify-content: space-between;
-}
-
-.statistics-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  border-radius: 1rem;
-  background-color: white;
-  width: 274px;
-  height: 100px;
-  padding: 20px;
-}
-
-.statistics-logo {
-  width: 48px;
-}
-
-.statistics-info {
-  display: flex;
-  width: 200px;
-  flex-direction: column;
-  text-align: right;
-}
-
-.statistics-name {
-  font-size: 0.875rem;
-  color: rgb(75 85 99);
-  line-height: 1.25rem;
-}
-
-.statistics-count {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  color: rgb(17 24 39);
-}
-
 .btn-download {
   display: flex;
   justify-content: center;
@@ -214,17 +137,17 @@ useHead({
   color: white;
 }
 
-@media screen and (max-width: 1200px) {
-  .statistics-block {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .statistics-item {
-    width: calc(50% - 10px);
-  }
+.profile-btn-edit,
+.btn-download {
+  transition: transform 0.3s ease;
+}
 
+.profile-btn-edit:hover,
+.btn-download:hover {
+  transform: scale(1.01);
+}
+
+@media screen and (max-width: 1200px) {
   .profile-btn-block {
     display: flex;
     justify-content: center;
@@ -238,12 +161,6 @@ useHead({
     flex-direction: column;
     gap: 20px;
     align-items: center;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .statistics-item {
-    width: 100%;
   }
 }
 </style>
