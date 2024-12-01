@@ -2,9 +2,9 @@
 import { useHead } from '@vueuse/head';
 
 useHead({
-  title: 'Заголовок страницы',
+  title: 'Карта развития',
   meta: [
-    { name: 'description', content: 'Описание страницы' },
+    { name: 'description', content: 'Карта развития' },
     { property: 'og:title', content: 'Заголовок для Open Graph' },
     { property: 'og:description', content: 'Описание для Open Graph' },
   ],
