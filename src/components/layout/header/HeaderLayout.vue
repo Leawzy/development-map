@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
         <div class="header-item">
           <a href="/"><img src="" alt="Логотип" /></a>
           <nav>
-            <RouterLink to="/about">About</RouterLink>
+            <RouterLink to="/goals">Мои цели</RouterLink>
             <RouterLink to="/about">About</RouterLink>
             <RouterLink to="/profile">Профиль</RouterLink>
             <RouterLink to="/about">About</RouterLink>
