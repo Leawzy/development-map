@@ -46,7 +46,7 @@ watch(itemCount, (newCount) => {
     <button class="btn-create-goal">Создать первую цель</button>
   </section>
   <section class="goals-block" v-else>
-    <article class="goals-item" v-for="(goal, index) in goals" :key="index">
+    <article class="goals-item" v-for="(goal, index) in goals" :key="index" :style="{ width: itemCount === 1 ? '100%' : '' }">
       <div class="goals-item-top">
         <div class="goals-item-title">
           <p>Изучить Go</p>

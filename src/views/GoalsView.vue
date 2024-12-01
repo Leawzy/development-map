@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import StatisticsLayout from '@/components/statisticsBlock/statisticsLayout.vue';
 import GoalsLayout from '@/components/goalsBlock/goalsLayout.vue';
+import { useHead } from '@vueuse/head';
+
+useHead({
+  title: 'Цели | Карта развития',
+  meta: [
+    { name: 'description', content: 'Цели' },
+    { property: 'og:title', content: 'Заголовок для Open Graph' },
+    { property: 'og:description', content: 'Описание для Open Graph' },
+  ],
+});
 </script>
 
 <template>
