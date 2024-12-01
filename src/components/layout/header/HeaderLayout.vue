@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
           <a href="/"><img src="" alt="Логотип" /></a>
           <nav>
             <RouterLink to="/goals">Мои цели</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
+            <RouterLink to="/progress">Мой прогресс</RouterLink>
             <RouterLink to="/profile">Профиль</RouterLink>
             <RouterLink to="/about">About</RouterLink>
           </nav>
@@ -53,8 +53,8 @@ onBeforeUnmount(() => {
       </div>
       <div class="hamburger-menu" v-if="menuOpen">
         <nav class="hamburger-menu" v-if="menuOpen">
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/goals">Мои цели</RouterLink>
+          <RouterLink to="/progress">Мой прогресс</RouterLink>
           <RouterLink to="/profile">Профиль</RouterLink>
           <RouterLink to="/about">About</RouterLink>
         </nav>

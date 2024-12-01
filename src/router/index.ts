@@ -5,6 +5,7 @@ import LoginView from '@/views/LoginView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import ForgotVue from '@/views/ForgotVue.vue';
 import GoalsView from '@/views/GoalsView.vue';
+import ProgressView from '@/views/ProgressView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,11 @@ const router = createRouter({
       path: '/goals',
       name: 'goals',
       component: GoalsView,
+    },
+    {
+      path: '/progress',
+      name: 'progress',
+      component: ProgressView,
     },
     {
       path: '/login',
