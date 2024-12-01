@@ -36,6 +36,11 @@
   width: 274px;
   height: 100px;
   padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.statistics-item:hover {
+  transform: scale(1.02);
 }
 
 .statistics-name {
