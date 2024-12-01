@@ -163,16 +163,6 @@ useHead({
   align-items: center;
 }
 
-.goals-block .bg-orange {
-  background-color: #f97316;
-}
-.goals-block .bg-blue {
-  background-color: #22c55e;
-}
-.goals-block .bg-green {
-  background-color: #3b82f6;
-}
-
 .goals-item {
   padding: 50px;
   display: flex;
